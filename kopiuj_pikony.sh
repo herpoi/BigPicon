@@ -1,5 +1,5 @@
 #################
-# Przyk³adowy skrypt kopiuj¹cy pikony z katalogu logos do picon zmieniaj¹c przy okazji nazwy na reference,
+# PrzykÅ‚adowy skrypt kopiujÄ…cy pikony z katalogu logos do picon zmieniajÄ…c przy okazji nazwy na reference,
 #################
 
 cp logos/tvp1hd.png picon/1_0_1_3ABD_514_13E_820000_0_0_0.png
