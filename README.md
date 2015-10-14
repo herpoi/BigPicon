@@ -11,7 +11,7 @@ Do generowania pikon z nazwami reference rozpoznawanymi przez enigmę najlepiej 
 <strong>Przykadowe loga:</strong><br />
 ![Screenshot](https://raw.github.com/herpoi/BigPicon-transparent/master/BigPicon-transparent-32bit/eurosporthd.png)<br />
 ![Screenshot](https://raw.github.com/herpoi/BigPicon-transparent/master/BigPicon-transparent-32bit/mgmhd.png)<br />
-![Screenshot](https://raw.github.com/herpoi/BigPicon-transparent/master/BigPicon-transparent-32bit/cartoonnetworkhd.png)<br />
+![Screenshot](https://raw.github.com/herpoi/BigPicon-transparent/master/BigPicon-transparent-32bit/tvp1hd.png)<br />
 ![Screenshot](https://raw.github.com/herpoi/BigPicon-transparent/master/BigPicon-transparent-32bit/polsatviasatnature.png)<br />
 ![Screenshot](https://raw.github.com/herpoi/BigPicon-transparent/master/BigPicon-LCD-32bit/eurosporthd.png)<br />
 ![Screenshot](https://raw.github.com/herpoi/BigPicon-transparent/master/BigPicon-LCD-32bit/mgmhd.png)<br />
