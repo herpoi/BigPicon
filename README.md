@@ -4,7 +4,7 @@ BigPicon
 Kolekcja pikon w rozmiarze 220x132.<br />
 Pikony w wersji przeźroczystej oraz z tłem LCD oraz z 8- i 32-bitową paletą kolorów.<br />
 W zbiorze zawarte są loga głównie polskich nadawców.<br /><br />
-
+W katalogu <strong>Kuchnia</strong> znajduje się skrypt do tworzenia pikon z plików źródłowych PNG i SVG<br /><br />
 
 <strong>Przykadowe loga:</strong><br />
 ![Screenshot](https://raw.github.com/herpoi/BigPicon-transparent/master/BigPicon-transparent-32bit/hbohd.png)<br />
