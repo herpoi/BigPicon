@@ -13,7 +13,7 @@ Pikony są tworzone w głębi kolorów 32bit i 8bit. Wersja 8bit jest optymalizo
 </br>
 <strong>Jak ugotować sobie własne pikony?</strong></br>
 <ol>
-	<li>W skrypcie <strong>Ugotuj_pikony.bat</strong> należy wyedytować ścieżkę do ImageMagick</br><strong>(set MAGICK_PATH="C:\Program Files\ImageMagick-6.9.3-Q16")</strong>.</li>
+	<li>W skrypcie <strong>Ugotuj_pikony.bat</strong> należy wyedytować ścieżkę do ImageMagick</br>Linia: set MAGICK_PATH="<strong>C:\Program Files\ImageMagick-6.9.3-Q16</strong>".</li>
 	<li>Pliki źródłowe z logo nadawców należy wrzucić do katalogu <strong>do_ugotowania</strong>.</li>
 		<ul>
 			<li>pliki źródłowe mogą być w formacie SVG lub PNG z przeźroczystym tłem</li>
