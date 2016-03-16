@@ -2,6 +2,8 @@ Kuchnia pikon
 ====================
 
 Skrypt pod Windows, który umożliwia szybkie tworzenie pikon z plików źródłowych PNG i SVG.<br />
+Tworzy pikony z tłem przeźroczystym lub dowolnym innym.<br />
+Pikony są tworzone w głębi kolorów 32bit i 8bit. Wersja 8bit jest optymalizowana przy pomocy narządzia <strong>pngquant</strong>, dzięki czemu zajmuje znacznie mniej miejsca.</br>
 <br />
 Do działania potrzebujemy:</br>
 1. ImageMagick - najlepiej użyć wersję Q16 static lub portable (http://www.imagemagick.org/script/binary-releases.php)</br>
