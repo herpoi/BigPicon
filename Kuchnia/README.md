@@ -29,4 +29,4 @@ Pikony są tworzone w głębi kolorów 32bit i 8bit. Wersja 8bit jest optymalizo
 	<li>Ugotowane pikony znajdują się w katalogu <strong>ugotowane</strong>.</li>
 	<li>Plikony będą pogrupowane w katalogach według nazwy tła i głębi kolorów - <strong>BigPicon-[nazwa_tła]-32bit/8bit</strong>.</li>
 </ol>
-Wszelkie uwagi i sugestmie mile widziane.
+Wszelkie uwagi i sugestie mile widziane.
