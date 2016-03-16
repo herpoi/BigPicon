@@ -5,9 +5,11 @@ Skrypt pod Windows, który umożliwia szybkie tworzenie pikon z plików źródł
 Tworzy pikony z tłem przeźroczystym lub dowolnym innym.<br />
 Pikony są tworzone w głębi kolorów 32bit i 8bit. Wersja 8bit jest optymalizowana przy pomocy narządzia <strong>pngquant</strong>, dzięki czemu zajmuje znacznie mniej miejsca.</br>
 <br />
-Do działania potrzebujemy:</br>
-1. ImageMagick - najlepiej użyć wersję Q16 static lub portable (http://www.imagemagick.org/script/binary-releases.php)</br>
-2. pngquant - narzędzie jest już zawarte w katalogu <strong>tools</strong></br>
+<strong>Do działania potrzebujemy:</br></strong>
+<ol>
+	<li><strong>ImageMagick</strong> - najlepiej użyć wersję Q16 static lub portable (http://www.imagemagick.org/script/binary-releases.php).</li>
+	<li><strong>pngquant</strong> - narzędzie jest już zawarte w katalogu <strong>tools</strong></li>
+</ol>
 </br>
 <strong>Jak ugotować sobie własne pikony?</strong></br>
 <ol>
