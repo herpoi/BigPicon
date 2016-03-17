@@ -28,7 +28,7 @@ for %%i in (..\do_ugotowania\*.*) do (
 )
 :: Wersja 8bit + optymalizacja pngquant
 copy /Y BigPicon-transparent-32bit BigPicon-transparent-8bit 1> nul
-for %%i in (BigPicon-transparent-8bit\*.png) do ("tools\pngquant2.exe" --force --ext .png 256 "%%i" 2> nul)
+for %%i in (BigPicon-transparent-8bit\*.png) do ("..\tools\pngquant2.exe" --force --ext .png 256 "%%i" 2> nul)
 
 :: Ok, teraz wersja z t³em
 for %%j in (..\tlo\*.png) do (
