@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 chcp 1250 1> nul
 
 :: Œcie¿ka do ImageMagick
-set MAGICK_PATH="C:\Program Files\ImageMagick-6.9.3-Q16"
+set MAGICK_PATH="c:\Program Files\ImageMagick-6.8.9-Q16"
 
 :: Utwórz katalogi
 mkdir ugotowane 2> nul
@@ -18,7 +18,11 @@ echo ===================================
 :: Przytnij, zmieñ rozmiar i konwertuj do PNG
 for %%i in (..\do_ugotowania\*.*) do (
 	echo Gotujê "%%~ni"...
-	convert -background none "%%i" -trim +repage "BigPicon-transparent-32bit\%%~ni.png"
+	:: Dodaj przeŸroczyst¹ ramkê na wypadek gdyby logo by³o by³o prostokatne i wype³ni³o ca³¹ powierzchniê robocz¹...
+	convert "%%i" -bordercolor none -compose Copy -border 10 "BigPicon-transparent-32bit\%%~ni.png"
+	:: ...a teraz przytnij
+	convert -background none "BigPicon-transparent-32bit\%%~ni.png" -trim +repage "BigPicon-transparent-32bit\%%~ni.png"
+	:: SprawdŸ rozmiar i dopasuj do 220x130px
 	for /f %%x in ('identify -ping -format "%%w" "%%i"') do set S=%%x
 	for /f %%y in ('identify -ping -format "%%h" "%%i"') do set W=%%y
 	set RES=false
@@ -28,7 +32,7 @@ for %%i in (..\do_ugotowania\*.*) do (
 )
 :: Wersja 8bit + optymalizacja pngquant
 copy /Y BigPicon-transparent-32bit BigPicon-transparent-8bit 1> nul
-for %%i in (BigPicon-transparent-8bit\*.png) do ("..\tools\pngquant2.exe" --force --ext .png 256 "%%i" 2> nul)
+for %%i in (BigPicon-transparent-8bit\*.png) do ("..\tools\pngquant2.exe" --force --ext .png 256 "%%i")
 
 :: Ok, teraz wersja z t³em
 for %%j in (..\tlo\*.png) do (
@@ -50,7 +54,7 @@ for %%j in (..\tlo\*.png) do (
 	)
 	:: Wersja 8bit + optymalizacja pngquant
 	copy /Y BigPicon-%%~nj-32bit BigPicon-%%~nj-8bit 1> nul
-	for %%i in (BigPicon-%%~nj-8bit\*.png) do ("..\tools\pngquant2.exe" --force --ext .png 256 "%%i" 2> nul)
+	for %%i in (BigPicon-%%~nj-8bit\*.png) do ("..\tools\pngquant2.exe" --force --ext .png 256 "%%i")
 )
 
 :: Wróc do katalogu ze skryptem
