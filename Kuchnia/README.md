@@ -21,9 +21,11 @@ Pikony są tworzone w głębi kolorów 32bit i 8bit. Wersja 8bit jest optymalizo
 			<li>skrypt automatycznie wykrywa puste przestrzenie wokół loga i je przycina</li>
 			<li>skrypt automatycznie zmniejsza większe loga do rozmiaru odpowiedniego dla pikon, loga w rozmiarze mniejszym niż 220x132px pozostają bez zmian</li>
 		</ul>  
-	<li>Do katalogu <strong>tlo</strong> należy wrzucić pliki tłami do pikon w formacie PNG w rozmiarze 220x132px</li>
+	<li>Do katalogów <strong>tlo_dodaj_cien</strong> i <strong>tlo_bez_cienia</strong> należy wrzucić pliki tłami do pikon w formacie PNG w rozmiarze 220x132px</li>
 		<ul>
 			<li>skrypt automatycznie rozpoznaje tła i tworzy plikony za każdym rodzajem tła</li>
+			<li><strong>tlo_dodaj_cien</strong> - skrypt doda cień do logo i całość (logo + cień) umieści na tle z tego katalogu</li>
+			<li><strong>tlo_bez_cienia</strong> - skrypt umieści logo bezpośrednio na tle z tego katalogu (bez dodatkowego cienia)</li>
 		</ul>
 	<li>Uruchomić skrypt <strong>Ugotuj_pikony.bat</strong> i czekać na zakończenie działania.</li>
 	<li>Ugotowane pikony znajdują się w katalogu <strong>ugotowane</strong>.</li>

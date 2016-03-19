@@ -35,7 +35,8 @@ copy /Y BigPicon-transparent-32bit BigPicon-transparent-8bit 1> nul
 for %%i in (BigPicon-transparent-8bit\*.png) do ("..\tools\pngquant2.exe" --force --ext .png 256 "%%i")
 
 :: Ok, teraz wersja z t³em
-for %%j in (..\tlo\*.png) do (
+:: Najpierw z cieniem...
+for %%j in (..\tlo_dodaj_cien\*.png) do (
 	echo.
 	echo ========================================
 	echo \\\ Gotujê pikony z t³em "%%~nj.png" ///
@@ -46,11 +47,34 @@ for %%j in (..\tlo\*.png) do (
 	:: Skopiuj pikony utworzone wczeœniej do katralogu roboczego
 	copy /Y BigPicon-transparent-32bit "BigPicon-%%~nj-32bit" 1> nul
 
-	:: Zmniejsz logo, zrób cieñ i pod³ó¿ t³o
+	:: Zmniejsz logo, dodaj cieñ i pod³ó¿ t³o
 	for %%i in (BigPicon-transparent-32bit\*.*) do (
 		echo Gotujê "%%~ni" na tle "%%~nj.png"...
 		%MAGICK_PATH%\convert "%%i" -resize 178x107 ^( +clone -background black -shadow 85x3+3+3 ^) +swap -background none -flatten PNG32:"BigPicon-%%~nj-32bit\%%~ni.png"
-		%MAGICK_PATH%\composite -gravity center "BigPicon-%%~nj-32bit\%%~ni.png" "..\tlo\%%~nj.png" PNG32:"BigPicon-%%~nj-32bit\%%~ni.png"
+		%MAGICK_PATH%\composite -gravity center "BigPicon-%%~nj-32bit\%%~ni.png" "..\tlo_dodaj_cien\%%~nj.png" PNG32:"BigPicon-%%~nj-32bit\%%~ni.png"
+	)
+	:: Wersja 8bit + optymalizacja pngquant
+	copy /Y BigPicon-%%~nj-32bit BigPicon-%%~nj-8bit 1> nul
+	for %%i in (BigPicon-%%~nj-8bit\*.png) do ("..\tools\pngquant2.exe" --force --ext .png 256 "%%i")
+)
+
+:: i bez cienia...
+for %%j in (..\tlo_bez_cienia\*.png) do (
+	echo.
+	echo ========================================
+	echo \\\ Gotujê pikony z t³em "%%~nj.png" ///
+	echo ========================================
+	:: Utwórz katalogi
+	mkdir "BigPicon-%%~nj-32bit" 2> nul
+	mkdir "BigPicon-%%~nj-8bit" 2> nul
+	:: Skopiuj pikony utworzone wczeœniej do katralogu roboczego
+	copy /Y BigPicon-transparent-32bit "BigPicon-%%~nj-32bit" 1> nul
+
+	:: Zmniejsz logo i pod³ó¿ t³o
+	for %%i in (BigPicon-transparent-32bit\*.*) do (
+		echo Gotujê "%%~ni" na tle "%%~nj.png"...
+		%MAGICK_PATH%\convert "%%i" -resize 190x114 -background none -flatten PNG32:"BigPicon-%%~nj-32bit\%%~ni.png"
+		%MAGICK_PATH%\composite -gravity center "BigPicon-%%~nj-32bit\%%~ni.png" "..\tlo_bez_cienia\%%~nj.png" PNG32:"BigPicon-%%~nj-32bit\%%~ni.png"
 	)
 	:: Wersja 8bit + optymalizacja pngquant
 	copy /Y BigPicon-%%~nj-32bit BigPicon-%%~nj-8bit 1> nul
