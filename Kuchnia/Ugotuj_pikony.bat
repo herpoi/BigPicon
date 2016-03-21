@@ -19,16 +19,11 @@ echo ===================================
 for %%i in (..\do_ugotowania\*.*) do (
 	echo Gotujê "%%~ni"...
 	:: Dodaj przeŸroczyst¹ ramkê na wypadek gdyby logo by³o by³o prostokatne i wype³ni³o ca³¹ powierzchniê robocz¹...
-	%MAGICK_PATH%convert "%%i" -bordercolor none -compose Copy -border 10 "BigPicon-transparent-32bit\%%~ni.png"
-	:: ...a teraz przytnij
-	%MAGICK_PATH%convert -background none "BigPicon-transparent-32bit\%%~ni.png" -trim +repage "BigPicon-transparent-32bit\%%~ni.png"
-	:: SprawdŸ rozmiar i dopasuj do 220x130px
-	for /f %%x in ('identify -ping -format "%%w" "%%i"') do set S=%%x
-	for /f %%y in ('identify -ping -format "%%h" "%%i"') do set W=%%y
-	set RES=false
-	if !S! gtr 220 if !W! gtr 132 set RES=true
-	if "!RES!"=="true" %MAGICK_PATH%\convert -background none "BigPicon-transparent-32bit\%%~ni.png" -resize 220x132 -gravity center -extent 220x132 PNG32:"BigPicon-transparent-32bit\%%~ni.png"
-	if "!RES!"=="false" %MAGICK_PATH%\convert -background none "BigPicon-transparent-32bit\%%~ni.png" -gravity center -extent 220x132 PNG32:"BigPicon-transparent-32bit\%%~ni.png"
+	%MAGICK_PATH%\convert "%%i" -bordercolor none -compose Copy -border 10 "BigPicon-transparent-32bit\%%~ni.png"
+	:: ...a teraz przytnij...
+	%MAGICK_PATH%\convert -background none "BigPicon-transparent-32bit\%%~ni.png" -trim +repage "BigPicon-transparent-32bit\%%~ni.png"
+	:: ...i zmieñ rozmiar
+	convert -background none "BigPicon-transparent-32bit\%%~ni.png" -resize 220x132^> -gravity center -extent 220x132 "BigPicon-transparent-32bit\%%~ni.png"
 )
 :: Wersja 8bit + optymalizacja pngquant
 copy /Y BigPicon-transparent-32bit BigPicon-transparent-8bit 1> nul
