@@ -20,10 +20,8 @@ for %%i in (..\do_ugotowania\*.*) do (
 	echo Gotujê "%%~ni"...
 	:: Dodaj przeŸroczyst¹ ramkê na wypadek gdyby logo by³o by³o prostokatne i wype³ni³o ca³¹ powierzchniê robocz¹...
 	%MAGICK_PATH%\convert "%%i" -bordercolor none -compose Copy -border 10 "BigPicon-transparent-32bit\%%~ni.png"
-	:: ...a teraz przytnij...
-	%MAGICK_PATH%\convert -background none "BigPicon-transparent-32bit\%%~ni.png" -trim +repage "BigPicon-transparent-32bit\%%~ni.png"
-	:: ...i zmieñ rozmiar
-	convert -background none "BigPicon-transparent-32bit\%%~ni.png" -resize 220x132^> -gravity center -extent 220x132 "BigPicon-transparent-32bit\%%~ni.png"
+	:: ...a teraz przytnij i zmieñ rozmiar
+	%MAGICK_PATH%\convert -background none "BigPicon-transparent-32bit\%%~ni.png" -trim +repage -resize 220x132^> -gravity center -extent 220x132 "BigPicon-transparent-32bit\%%~ni.png"
 )
 :: Wersja 8bit + optymalizacja pngquant
 copy /Y BigPicon-transparent-32bit BigPicon-transparent-8bit 1> nul
