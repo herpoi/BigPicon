@@ -19,9 +19,9 @@ echo ===================================
 for %%i in (..\do_ugotowania\*.*) do (
 	echo Gotujê "%%~ni"...
 	:: Dodaj przeŸroczyst¹ ramkê na wypadek gdyby logo by³o by³o prostokatne i wype³ni³o ca³¹ powierzchniê robocz¹...
-	convert "%%i" -bordercolor none -compose Copy -border 10 "BigPicon-transparent-32bit\%%~ni.png"
+	%MAGICK_PATH%convert "%%i" -bordercolor none -compose Copy -border 10 "BigPicon-transparent-32bit\%%~ni.png"
 	:: ...a teraz przytnij
-	convert -background none "BigPicon-transparent-32bit\%%~ni.png" -trim +repage "BigPicon-transparent-32bit\%%~ni.png"
+	%MAGICK_PATH%convert -background none "BigPicon-transparent-32bit\%%~ni.png" -trim +repage "BigPicon-transparent-32bit\%%~ni.png"
 	:: SprawdŸ rozmiar i dopasuj do 220x130px
 	for /f %%x in ('identify -ping -format "%%w" "%%i"') do set S=%%x
 	for /f %%y in ('identify -ping -format "%%h" "%%i"') do set W=%%y
