@@ -43,8 +43,8 @@ for %%j in (..\tlo_dodaj_cien\*.png) do (
 	:: Zmniejsz logo, dodaj cieñ i pod³ó¿ t³o
 	for %%i in (BigPicon-transparent-32bit\*.*) do (
 		echo Gotujê "%%~ni" na tle "%%~nj.png"...
-		%MAGICK_PATH%\convert "%%i" -resize 178x107 ^( +clone -background black -shadow 85x3+3+3 ^) +swap -background none -flatten PNG32:"BigPicon-%%~nj-32bit\%%~ni.png"
-		%MAGICK_PATH%\composite -gravity center "BigPicon-%%~nj-32bit\%%~ni.png" "..\tlo_dodaj_cien\%%~nj.png" PNG32:"BigPicon-%%~nj-32bit\%%~ni.png"
+		%MAGICK_PATH%\convert "%%i" -resize 178x107 ^( +clone -background black -shadow 85x3+3+3 ^) +swap -background none -flatten "BigPicon-%%~nj-32bit\%%~ni.png"
+		%MAGICK_PATH%\composite -gravity center "BigPicon-%%~nj-32bit\%%~ni.png" "..\tlo_dodaj_cien\%%~nj.png" "BigPicon-%%~nj-32bit\%%~ni.png"
 	)
 	:: Wersja 8bit + optymalizacja pngquant
 	copy /Y BigPicon-%%~nj-32bit BigPicon-%%~nj-8bit 1> nul
@@ -66,8 +66,8 @@ for %%j in (..\tlo_bez_cienia\*.png) do (
 	:: Zmniejsz logo i pod³ó¿ t³o
 	for %%i in (BigPicon-transparent-32bit\*.*) do (
 		echo Gotujê "%%~ni" na tle "%%~nj.png"...
-		%MAGICK_PATH%\convert "%%i" -resize 190x114 -background none -flatten PNG32:"BigPicon-%%~nj-32bit\%%~ni.png"
-		%MAGICK_PATH%\composite -gravity center "BigPicon-%%~nj-32bit\%%~ni.png" "..\tlo_bez_cienia\%%~nj.png" PNG32:"BigPicon-%%~nj-32bit\%%~ni.png"
+		%MAGICK_PATH%\convert "%%i" -resize 190x114 -background none -flatten "BigPicon-%%~nj-32bit\%%~ni.png"
+		%MAGICK_PATH%\composite -gravity center "BigPicon-%%~nj-32bit\%%~ni.png" "..\tlo_bez_cienia\%%~nj.png" "BigPicon-%%~nj-32bit\%%~ni.png"
 	)
 	:: Wersja 8bit + optymalizacja pngquant
 	copy /Y BigPicon-%%~nj-32bit BigPicon-%%~nj-8bit 1> nul
